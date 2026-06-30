@@ -1,0 +1,1 @@
+This folder contains a candidate with conflicting scalar data. The CSV names him "Bob", but the ATS JSON names him "Robert Jones". Because the MergeEngine respects the source priority (ATS > CSV), it intelligently selects "Robert Jones" and tracks this explicitly in the `provenance` payload of the output.

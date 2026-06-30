@@ -1,0 +1,2 @@
+This folder contains an edge-case candidate with severe missing data. The CSV has no name, no email, and an invalid phone number. The ATS JSON only has an email, but no name. 
+Because the `config.json` sets `on_missing: "null"`, the missing values (like `name` and `primary_phone`) will be cleanly output as `null` instead of crashing the batch process or throwing missing key errors. If it had been set to `"error"`, the process would have flagged this candidate as invalid.

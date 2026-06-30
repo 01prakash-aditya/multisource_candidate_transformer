@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Unknown",
+    "primary_email": null,
+    "primary_phone": null,
+    "all_skills": [
+      "Java"
+    ],
+    "overall_confidence": 0.7,
+    "provenance": []
+  },
+  {
+    "name": "Unknown",
+    "primary_email": "charlie@example.com",
+    "primary_phone": null,
+    "all_skills": null,
+    "overall_confidence": 0.9,
+    "provenance": [
+      {
+        "field": "emails",
+        "source": "ats_json",
+        "method": "exact_match"
+      }
+    ]
+  }
+]

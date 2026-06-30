@@ -40,8 +40,7 @@ def _resolve_path(data: Any, path: str) -> Any:
                 return None
                 
             if idx_str == '': # e.g. skills[]
-                # We need to map the REST of the path over this array
-                return current # Handled specially below if needed
+                pass # Just continue, the next segment will map over the list
             else:
                 idx = int(idx_str)
                 if isinstance(current, list) and len(current) > idx:

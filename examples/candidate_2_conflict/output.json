@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Robert Jones",
+    "primary_email": "bob@example.com",
+    "primary_phone": null,
+    "all_skills": [
+      "React"
+    ],
+    "overall_confidence": 1.0,
+    "provenance": [
+      {
+        "field": "emails",
+        "source": "csv",
+        "method": "exact_match"
+      },
+      {
+        "field": "emails",
+        "source": "ats_json",
+        "method": "exact_match"
+      },
+      {
+        "field": "full_name",
+        "source": "ats_json",
+        "method": "priority_merge"
+      },
+      {
+        "field": "headline",
+        "source": "ats_json",
+        "method": "priority_merge"
+      }
+    ]
+  }
+]

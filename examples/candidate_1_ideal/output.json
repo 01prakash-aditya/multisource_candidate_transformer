@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Alice Smith",
+    "primary_email": "alice@example.com",
+    "primary_phone": null,
+    "all_skills": [
+      "Python",
+      "Django"
+    ],
+    "overall_confidence": 1.0,
+    "provenance": [
+      {
+        "field": "emails",
+        "source": "csv",
+        "method": "exact_match"
+      },
+      {
+        "field": "emails",
+        "source": "ats_json",
+        "method": "exact_match"
+      },
+      {
+        "field": "full_name",
+        "source": "ats_json",
+        "method": "priority_merge"
+      },
+      {
+        "field": "headline",
+        "source": "ats_json",
+        "method": "priority_merge"
+      }
+    ]
+  }
+]

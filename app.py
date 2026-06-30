@@ -68,11 +68,11 @@ with gr.Blocks(title="Eightfold Candidate Data Transformer") as demo:
     
     with gr.Row():
         with gr.Column():
-            csv_in = gr.File(label="Upload Recruiter CSV")
+            csv_in = gr.File(label="Upload Candidate CSV")
             json_in = gr.File(label="Upload ATS JSON")
             github_in = gr.Textbox(label="GitHub Usernames (one per line)", lines=3)
             resume_in = gr.File(label="Upload Resumes (PDF/DOCX)", file_count="multiple")
-            config_in = gr.File(label="Upload Runtime Config (config.json)")
+            config_in = gr.File(label="Upload Runtime Config (config.json) (* Required)")
             submit_btn = gr.Button("Transform & Merge", variant="primary")
             
         with gr.Column():

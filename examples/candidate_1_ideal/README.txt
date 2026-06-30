@@ -1,0 +1,1 @@
+This folder contains an ideal candidate. Data is provided perfectly in CSV and JSON formats, and the identity matches on both email and phone. The MergeEngine successfully links the records and increases the confidence score due to source agreement.

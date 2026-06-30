@@ -14,13 +14,7 @@ ENV/
 .coverage
 htmlcov/
 
-# Dummy Test Data & Configs (Local)
-dummy.csv
-dummy.json
-output.json
-config.json
-
-# Resumes directory (avoid pushing real resumes)
+# Resumes directory 
 resumes/
 
 # Logs

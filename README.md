@@ -4,6 +4,8 @@
 
 This project implements a robust ETL pipeline designed to ingest candidate data from multiple noisy, disjointed sources (CSV, ATS JSON, GitHub API, Resume PDFs/DOCXs), merge them intelligently, resolve conflicts, and project the canonical data into a custom, strictly validated JSON format.
 
+![Uploading image.png…]()
+
 <img width="1767" height="547" alt="image" src="https://github.com/user-attachments/assets/e9af6661-ec03-401f-a686-3fa16f70465f" />
 
 

@@ -2,6 +2,11 @@
 
 This project implements a robust ETL pipeline designed to ingest candidate data from multiple noisy, disjointed sources (CSV, ATS JSON, GitHub API, Resume PDFs/DOCXs), merge them intelligently, resolve conflicts, and project the canonical data into a custom, strictly validated JSON format.
 
+<img width="1725" height="887" alt="image" src="https://github.com/user-attachments/assets/89f30f40-5134-4ef6-abd2-35d402f6e637" />
+
+<img width="1767" height="547" alt="image" src="https://github.com/user-attachments/assets/e9af6661-ec03-401f-a686-3fa16f70465f" />
+
+
 ## Features
 
 - **Source Extractors**: Adapters for CSV, custom JSON, GitHub REST API, and Resume documents (`.pdf`, `.docx`).
@@ -12,6 +17,8 @@ This project implements a robust ETL pipeline designed to ingest candidate data 
 - **Config-Driven Projection**: Projects the unified `CanonicalProfile` into any required JSON schema at runtime using a JSON-path evaluator.
 - **Schema Validation**: Dynamically builds a JSON schema (`jsonschema`) from the runtime config to ensure every output record perfectly complies before it is written.
 - **Interfaces**: Includes both a robust CLI (`run.py`) and a Graphical Web UI (`app.py`).
+
+
 
 ## Installation
 

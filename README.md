@@ -22,7 +22,6 @@ Ensure you have Python 3.12+ installed.
 ```bash
 pip install -r requirements.txt
 ```
-*(Note: If `requirements.txt` is not provided, you can manually install the dependencies: `pydantic`, `phonenumbers`, `dateparser`, `jsonschema`, `requests`, `pdfplumber`, `python-docx`, `pytest`, `gradio`)*
 
 ## Usage (CLI)
 

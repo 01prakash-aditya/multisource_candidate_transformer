@@ -4,6 +4,21 @@
 
 This project implements a robust ETL pipeline designed to ingest candidate data from multiple noisy, disjointed sources (CSV, ATS JSON, GitHub API, Resume PDFs/DOCXs), merge them intelligently, resolve conflicts, and project the canonical data into a custom, strictly validated JSON format.
 
+<img width="1767" height="547" alt="image" src="https://github.com/user-attachments/assets/e9af6661-ec03-401f-a686-3fa16f70465f" />
+
+
+## Features
+
+- **Source Extractors**: Adapters for CSV, custom JSON, GitHub REST API, and Resume documents (`.pdf`, `.docx`).
+- **Data Normalization Layer**: Standardizes phone numbers to E.164 (`phonenumbers`), cleans dates to `YYYY-MM` (`dateparser`), standardizes country codes, and canonicalizes skill aliases.
+- **Identity Resolution & Merge Engine**: Uses candidate emails (primary) or name+phone combinations to link records across sources.
+- **Conflict Resolution**: Resolves scalar conflicts using a strict source-priority table (e.g., ATS > Resume > GitHub > CSV).
+- **Confidence Scoring**: Dynamically calculates confidence based on source reliability, data staleness, and rewards data points that have consensus across multiple sources.
+- **Config-Driven Projection**: Projects the unified `CanonicalProfile` into any required JSON schema at runtime using a JSON-path evaluator.
+- **Schema Validation**: Dynamically builds a JSON schema (`jsonschema`) from the runtime config to ensure every output record perfectly complies before it is written.
+- **Interfaces**: Includes both a robust CLI (`run.py`) and a Graphical Web UI (`app.py`).
+
+## System Architecture
 ```mermaid
 graph TD
     %% Input Sources
@@ -55,23 +70,6 @@ graph TD
     classDef config fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
     class Config,FinalJSON config;
 ```
-
-<img width="1767" height="547" alt="image" src="https://github.com/user-attachments/assets/e9af6661-ec03-401f-a686-3fa16f70465f" />
-
-
-## Features
-
-- **Source Extractors**: Adapters for CSV, custom JSON, GitHub REST API, and Resume documents (`.pdf`, `.docx`).
-- **Data Normalization Layer**: Standardizes phone numbers to E.164 (`phonenumbers`), cleans dates to `YYYY-MM` (`dateparser`), standardizes country codes, and canonicalizes skill aliases.
-- **Identity Resolution & Merge Engine**: Uses candidate emails (primary) or name+phone combinations to link records across sources.
-- **Conflict Resolution**: Resolves scalar conflicts using a strict source-priority table (e.g., ATS > Resume > GitHub > CSV).
-- **Confidence Scoring**: Dynamically calculates confidence based on source reliability, data staleness, and rewards data points that have consensus across multiple sources.
-- **Config-Driven Projection**: Projects the unified `CanonicalProfile` into any required JSON schema at runtime using a JSON-path evaluator.
-- **Schema Validation**: Dynamically builds a JSON schema (`jsonschema`) from the runtime config to ensure every output record perfectly complies before it is written.
-- **Interfaces**: Includes both a robust CLI (`run.py`) and a Graphical Web UI (`app.py`).
-
-## System Architecture
-<img width="882" height="571" alt="image" src="https://github.com/user-attachments/assets/7d7d69ad-7ae2-4885-a8cc-e0796f699852" />
 
 ## Installation
 

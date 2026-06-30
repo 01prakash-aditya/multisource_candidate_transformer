@@ -4,7 +4,57 @@
 
 This project implements a robust ETL pipeline designed to ingest candidate data from multiple noisy, disjointed sources (CSV, ATS JSON, GitHub API, Resume PDFs/DOCXs), merge them intelligently, resolve conflicts, and project the canonical data into a custom, strictly validated JSON format.
 
-<img width="1725" height="887" alt="image" src="https://github.com/user-attachments/assets/89f30f40-5134-4ef6-abd2-35d402f6e637" />
+```mermaid
+graph TD
+    %% Input Sources
+    subgraph Extractors [Data Ingestion Layer]
+        CSV[CSV Extractor]
+        ATS[ATS JSON Extractor]
+        GH[GitHub Extractor]
+        RES[Resume Extractor]
+    end
+
+    %% Normalization
+    subgraph Normalization [Data Cleaning & Normalizers]
+        PN[Phone Normalizer <br/> E.164]
+        DN[Date Normalizer <br/> YYYY-MM]
+        CN[Country Normalizer]
+    end
+
+    %% Merger
+    subgraph MergeEngine [Identity & Merge Engine]
+        ID[Identity Resolution <br/> Email / Phone+Name]
+        CR[Conflict Resolution <br/> Priority Config]
+        CF[Confidence Scorer]
+        PR[Provenance Tracker]
+    end
+
+    %% Projection
+    subgraph OutputLayer [Projection & Validation]
+        PROJ[Dynamic JSON Projector]
+        VAL[Schema Validator]
+    end
+
+    %% Data Flow
+    CSV -->|RawRecord| Normalization
+    ATS -->|RawRecord| Normalization
+    GH -->|RawRecord| Normalization
+    RES -->|RawRecord| Normalization
+
+    Normalization --> MergeEngine
+    
+    MergeEngine -->|CanonicalProfile| PROJ
+    
+    Config[(config.json)] -->|JSON Paths| PROJ
+    Config -->|Schema Rules| VAL
+    
+    PROJ -->|Projected JSON| VAL
+    VAL -->|Validated Output| FinalJSON[(output.json)]
+    
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:1px;
+    classDef config fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
+    class Config,FinalJSON config;
+```
 
 <img width="1767" height="547" alt="image" src="https://github.com/user-attachments/assets/e9af6661-ec03-401f-a686-3fa16f70465f" />
 

@@ -20,6 +20,8 @@ This project implements a robust ETL pipeline designed to ingest candidate data 
 - **Schema Validation**: Dynamically builds a JSON schema (`jsonschema`) from the runtime config to ensure every output record perfectly complies before it is written.
 - **Interfaces**: Includes both a robust CLI (`run.py`) and a Graphical Web UI (`app.py`).
 
+## System Architecture
+<img width="585" height="536" alt="image" src="https://github.com/user-attachments/assets/81595729-b65f-46f5-b084-a823551751d3" />
 
 
 ## Installation

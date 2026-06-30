@@ -1,5 +1,7 @@
 # Multi-Source Candidate Data Transformer
 
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 This project implements a robust ETL pipeline designed to ingest candidate data from multiple noisy, disjointed sources (CSV, ATS JSON, GitHub API, Resume PDFs/DOCXs), merge them intelligently, resolve conflicts, and project the canonical data into a custom, strictly validated JSON format.
 
 <img width="1725" height="887" alt="image" src="https://github.com/user-attachments/assets/89f30f40-5134-4ef6-abd2-35d402f6e637" />

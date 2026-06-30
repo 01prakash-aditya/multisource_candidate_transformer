@@ -21,8 +21,7 @@ This project implements a robust ETL pipeline designed to ingest candidate data 
 - **Interfaces**: Includes both a robust CLI (`run.py`) and a Graphical Web UI (`app.py`).
 
 ## System Architecture
-<img width="585" height="536" alt="image" src="https://github.com/user-attachments/assets/81595729-b65f-46f5-b084-a823551751d3" />
-
+<img width="882" height="571" alt="image" src="https://github.com/user-attachments/assets/7d7d69ad-7ae2-4885-a8cc-e0796f699852" />
 
 ## Installation
 

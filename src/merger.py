@@ -5,7 +5,6 @@ from .normalizers import normalize_phone, normalize_date, normalize_country, nor
 from .confidence import calculate_confidence
 from .extractors.base import RawRecord
 
-# Priority table for conflict resolution (lower index = higher priority)
 SOURCE_PRIORITY = ["ats_json", "resume", "github", "csv", "notes"]
 
 def get_source_priority(source_type: str) -> int:

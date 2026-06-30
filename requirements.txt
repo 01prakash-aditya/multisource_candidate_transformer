@@ -1,0 +1,9 @@
+pydantic
+phonenumbers
+dateparser
+jsonschema
+requests
+pdfplumber
+python-docx
+pytest
+gradio

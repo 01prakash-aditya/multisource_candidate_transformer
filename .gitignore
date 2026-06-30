@@ -16,6 +16,7 @@ htmlcov/
 
 # Resumes directory 
 resumes/
+examples/candidate_aditya
 
 # Logs
 *.log

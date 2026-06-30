@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Dummy Test Data & Configs (Local)
+dummy.csv
+dummy.json
+output.json
+config.json
+
+# Resumes directory (avoid pushing real resumes)
+resumes/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
